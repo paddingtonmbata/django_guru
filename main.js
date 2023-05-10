@@ -1,112 +1,4 @@
 
-
-// // const XLSX = require('xlsx');
-// // const fs = require('fs');
-
-
-// // const workbook = XLSX.readFile('data.xlsx')
-
-// // const degree = workbook.Sheets[workbook.SheetNames[0]];
-// // const dg = XLSX.utils.sheet_to_json(degree);
-
-// // fs.writeFile('data.json', JSON.stringify(dg), function (err) {
-// //     if (err) throw err;
-// //     console.log('JSON data has been saved to json.data')
-// // });
-
-
-// var countryCounts = {
-//     "GB":7,
-//     "US":8,
-//     "CA":4,
-//     "NO":3,
-//     "DK":1,
-//     "ZA":10,
-//     "IE":1,
-//     "FR":30,
-//     "AU":12
-// }
-
-// $(function(){
-//     $('#world-map').vectorMap({
-//         map: 'world_mill',
-//         series: {
-//             regions: [{
-//                 values: countryCounts,
-//                 scale: ['#C8EEFF', '#0071A4'],
-//                 normalizeFunction: 'polynomial'
-//             }]
-//         },
-//         onRegionTipShow: function(e, el, code){
-//             el.html(el.html()+' (Number of Institutions - ' + countryCounts[code]+')');
-//         }
-//     });
-// });
-
-// var countryCountsT = {
-//     "GB":4,
-//     "US":8,
-//     "CA":4,
-//     "NO":3,
-//     "DK":1,
-//     "ZA":1,
-//     "IE":1,
-//     "FR":20,
-//     "AU":12
-// }
-
-// $(function(){
-//     $('#world-map-training').vectorMap({
-//         map: 'world_mill',
-//         series: {
-//             regions: [{
-//                 values: countryCountsT,
-//                 scale: ['#C8EEFF', '#0071A4'],
-//                 normalizeFunction: 'polynomial'
-//             }]
-//         },
-//         onRegionTipShow: function(e, el, code){
-//             el.html(el.html()+' (Number of Institutions - ' + countryCountsT[code]+')');
-//         }
-//     });
-// });
-
-
-
-// // const fs = require('fs');
-
-// // fs.readFile('data.json', 'utf8', (err, data) => {
-// //   if (err) {
-// //     console.error(err);
-// //     return;
-// //   }
-
-// //   const items = JSON.parse(data);
-// //   const countryCounts = {};
-
-// //   items.forEach((item) => {
-// //     const country = item['Country of qual'];
-// //     if (country) {
-// //       if (countryCounts[country]) {
-// //         countryCounts[country]++;
-// //       } else {
-// //         countryCounts[country] = 1;
-// //       }
-// //     }
-// //   });
-
-// //   const output = {
-// //     countryCounts
-// //   };
-
-// //   fs.writeFile('number_of_degrees_per_country.json', JSON.stringify(output), (err) => {
-// //     if (err) {
-// //       console.error(err);
-// //       return;
-// //     }
-// //     console.log('Output saved to countryCounts.json');
-// //   });
-// // });
 // Dictionary with country names as keys
 var worldMapNames = {
     "Afghanistan": 0,
@@ -146,10 +38,10 @@ var worldMapNames = {
     "Burundi": 0,
     "Cambodia": 0,
     "Cameroon": 0,
-    "Canada": 0,
+    "Canada": 4,
     "Cape Verde": 0,
     "Cayman Islands": 0,
-    "Central African Republic": 0,
+    "Central African Rep.": 0,
     "Chad": 0,
     "Chile": 0,
     "China": 0,
@@ -158,15 +50,16 @@ var worldMapNames = {
     "Colombia": 0,
     "Comoros": 0,
     "Congo": 0,
-    "Congo, The Democratic Republic of The": 0,
+    "Dem. Rep. Congo": 0,
     "Cook Islands": 0,
     "Costa Rica": 0,
-    "Cote D'ivoire": 0,
+    "C\u00f4te d'Ivoire": 0,
     "Croatia": 0,
     "Cuba": 0,
     "Cyprus": 0,
+    "N. Cyprus":0,
     "Czech Republic": 0,
-    "Denmark": 0,
+    "Denmark": 1,
     "Djibouti": 0,
     "Dominica": 0,
     "Dominican Republic": 0,
@@ -184,12 +77,12 @@ var worldMapNames = {
     "France": 0,
     "French Guiana": 0,
     "French Polynesia": 0,
-    "French Southern Territories": 0,
+    "Fr. S. Antarctic Lands": 0,
     "Gabon": 0,
     "Gambia": 0,
     "Georgia": 0,
     "Germany": 0,
-    "Ghana":0,
+    "Ghana": 0,
     "Gibraltar": 0,
     "Greece": 0,
     "Greenland": 0,
@@ -199,7 +92,7 @@ var worldMapNames = {
     "Guatemala": 0,
     "Guernsey": 0,
     "Guinea": 0,
-    "Guinea-bissau": 0,
+    "Guinea-Bissau": 0,
     "Guyana": 0,
     "Haiti": 0,
     "Heard Island and Mcdonald Islands": 0,
@@ -210,9 +103,9 @@ var worldMapNames = {
     "Iceland": 0,
     "India": 0,
     "Indonesia": 0,
-    "Iran, Islamic Republic of": 0,
+    "Iran": 0,
     "Iraq": 0,
-    "Ireland": 0,
+    "Ireland": 1,
     "Isle of Man": 0,
     "Israel": 0,
     "Italy": 0,
@@ -225,19 +118,20 @@ var worldMapNames = {
     "Kiribati": 0,
     "Korea, Democratic People's Republic of": 0,
     "Korea, Republic of": 0,
+    "Kosovo":0,
     "Kuwait": 0,
     "Kyrgyzstan": 0,
-    "Lao People's Democratic Republic": 0,
+    "Laos": 0,
     "Latvia": 0,
     "Lebanon": 0,
     "Lesotho": 0,
     "Liberia": 0,
-    "Libyan Arab Jamahiriya": 0,
+    "Libya": 0,
     "Liechtenstein": 0,
     "Lithuania": 0,
     "Luxembourg": 0,
     "Macao": 0,
-    "North Macedonia": 0,
+    "Macedonia": 0,
     "Madagascar": 0,
     "Malawi": 0,
     "Malaysia": 0,
@@ -272,11 +166,11 @@ var worldMapNames = {
     "Niue": 0,
     "Norfolk Island": 0,
     "Northern Mariana Islands": 0,
-    "Norway": 0,
+    "Norway": 3,
     "Oman": 0,
     "Pakistan": 0,
     "Palau": 0,
-    "Palestinian Territory, Occupied": 0,
+    "Palestine": 0,
     "Panama": 0,
     "Papua New Guinea": 0,
     "Paraguay": 0,
@@ -289,7 +183,7 @@ var worldMapNames = {
     "Qatar": 0,
     "Reunion": 0,
     "Romania": 0,
-    "Russian Federation": 0,
+    "Russia": 0,
     "Rwanda": 0,
     "Saint Helena": 0,
     "Saint Kitts and Nevis": 0,
@@ -309,8 +203,10 @@ var worldMapNames = {
     "Slovenia": 0,
     "Solomon Islands": 0,
     "Somalia": 0,
-    "South Africa": 0,
+    "Somaliland": 0,
+    "South Africa": 1,
     "South Georgia and the South Sandwich Islands": 0,
+    "South Sudan":0,
     "Spain": 0,
     "Sri Lanka": 0,
     "Sudan": 0,
@@ -319,10 +215,10 @@ var worldMapNames = {
     "Swaziland": 0,
     "Sweden": 0,
     "Switzerland": 0,
-    "Syrian Arab Republic": 0,
-    "Taiwan, Province of China": 0,
+    "Syria": 0,
+    "Taiwan": 0,
     "Tajikistan": 0,
-    "Tanzania, United Republic of": 0,
+    "Tanzania": 0,
     "Thailand": 0,
     "Timor-leste": 0,
     "Togo": 0,
@@ -337,18 +233,18 @@ var worldMapNames = {
     "Uganda": 0,
     "Ukraine": 0,
     "United Arab Emirates": 0,
-    "United Kingdom": 0,
-    "United States": 0,
+    "United Kingdom": 4,
+    "United States": 8,
     "United States Minor Outlying Islands": 0,
     "Uruguay": 0,
     "Uzbekistan": 0,
     "Vanuatu": 0,
     "Venezuela": 0,
-    "Viet Nam": 0,
+    "Vietnam": 0,
     "Virgin Islands, British": 0,
     "Virgin Islands, U.S.": 0,
     "Wallis and Futuna": 0,
-    "Western Sahara": 0,
+    "W. Sahara": 0,
     "Yemen": 0,
     "Zambia": 0,
     "Zimbabwe": 0
@@ -397,7 +293,7 @@ const worldMapCodes = {
     "CA": "Canada",
     "CV": "Cape Verde",
     "KY": "Cayman Islands",
-    "CF": "Central African Republic",
+    "CF": "Central African Rep.",
     "TD": "Chad",
     "CL": "Chile",
     "CN": "China",
@@ -406,14 +302,15 @@ const worldMapCodes = {
     "CO": "Colombia",
     "KM": "Comoros",
     "CG": "Congo",
-    "CD": "Congo, Democratic Republic of the",
+    "CD": "Dem. Rep. Congo",
     "CK": "Cook Islands",
     "CR": "Costa Rica",
-    "CI": "Cote D'Ivoire",
+    "CI": "C\u00f4te d'Ivoire",
     "HR": "Croatia",
     "CU": "Cuba",
     "CW": "Curacao",
     "CY": "Cyprus",
+    "XC": "N. Cyprus",
     "CZ": "Czech Republic",
     "DK": "Denmark",
     "DJ": "Djibouti",
@@ -421,62 +318,63 @@ const worldMapCodes = {
     "DO": "Dominican Republic",
     "EC": "Ecuador",
     "EG": "Egypt",
-    "GB-ENG": "England",
-"GQ": "Equatorial Guinea",
-"ER": "Eritrea",
-"EE": "Estonia",
-"ET": "Ethiopia",
-"FK": "Falkland Islands (Malvinas)",
-"FO": "Faroe Islands",
-"FJ": "Fiji",
-"FI": "Finland",
-"FR": "France",
-"GF": "French Guiana",
-"PF": "French Polynesia",
-"TF": "French Southern Territories",
-"GA": "Gabon",
-"GM": "Gambia",
-"GE": "Georgia",
-"DE": "Germany",
-"GH": "Ghana",
-"GI": "Gibraltar",
-"GR": "Greece",
-"GL": "Greenland",
-"GD": "Grenada",
-"GP": "Guadeloupe",
-"GU": "Guam",
-"GT": "Guatemala",
-"GG": "Guernsey",
-"GN": "Guinea",
-"GW": "Guinea-Bissau",
-"GY": "Guyana",
-"HT": "Haiti",
-"HM": "Heard Island and Mcdonald Islands",
-"VA": "Holy See (Vatican City State)",
-"HN": "Honduras",
-"HK": "Hong Kong",
-"HU": "Hungary",
-"IS": "Iceland",
-"IN": "India",
-"ID": "Indonesia",
-"IR": "Iran, Islamic Republic Of",
-"IQ": "Iraq",
-"IE": "Ireland",
-"IM": "Isle of Man",
-"IL": "Israel",
-"JM": "Jamaica",
-"JP": "Japan",
-"JE": "Jersey",
-"JO": "Jordan",
-"KZ": "Kazakhstan",
-"KE": "Kenya",
-"KI": "Kiribati",
-"KP": "Korea, Democratic People's Republic of",
-"KR": "Korea, Republic of",
-"KW": "Kuwait",
-"KG": "Kyrgyzstan",
-"XK": "Kosovo",
-"LA": "Laos",
+    "GB": "United Kingdom",
+    "GQ": "Equatorial Guinea",
+    "ER": "Eritrea",
+    "EE": "Estonia",
+    "ET": "Ethiopia",
+    "FK": "Falkland Islands (Malvinas)",
+    "FO": "Faroe Islands",
+    "FJ": "Fiji",
+    "FI": "Finland",
+    "FR": "France",
+    "GF": "French Guiana",
+    "PF": "French Polynesia",
+    "TF": "Fr. S. Antarctic Lands",
+    "GA": "Gabon",
+    "GM": "Gambia",
+    "GE": "Georgia",
+    "DE": "Germany",
+    "GH": "Ghana",
+    "GI": "Gibraltar",
+    "GR": "Greece",
+    "GL": "Greenland",
+    "GD": "Grenada",
+    "GP": "Guadeloupe",
+    "GU": "Guam",
+    "GT": "Guatemala",
+    "GG": "Guernsey",
+    "GN": "Guinea",
+    "GW": "Guinea-Bissau",
+    "GY": "Guyana",
+    "HT": "Haiti",
+    "HM": "Heard Island and Mcdonald Islands",
+    "VA": "Holy See (Vatican City State)",
+    "HN": "Honduras",
+    "HK": "Hong Kong",
+    "HU": "Hungary",
+    "IS": "Iceland",
+    "IN": "India",
+    "ID": "Indonesia",
+    "IR": "Iran",
+    "IQ": "Iraq",
+    "IE": "Ireland",
+    "IM": "Isle of Man",
+    "IL": "Israel",
+    "IT": "Italy",
+    "JM": "Jamaica",
+    "JP": "Japan",
+    "JE": "Jersey",
+    "JO": "Jordan",
+    "KZ": "Kazakhstan",
+    "KE": "Kenya",
+    "KI": "Kiribati",
+    "KP": "Korea, Democratic People's Republic of",
+    "KR": "Korea, Republic of",
+    "KW": "Kuwait",
+    "KG": "Kyrgyzstan",
+    "XK": "Kosovo",
+    "LA": "Laos",
     "LV": "Latvia",
     "LB": "Lebanon",
     "LS": "Lesotho",
@@ -485,6 +383,7 @@ const worldMapCodes = {
     "LI": "Liechtenstein",
     "LT": "Lithuania",
     "LU": "Luxembourg",
+    "MK": "Macedonia",
     "MG": "Madagascar",
     "MW": "Malawi",
     "MY": "Malaysia",
@@ -522,6 +421,7 @@ const worldMapCodes = {
     "PG": "Papua New Guinea",
     "PH": "Philippines",
     "PK": "Pakistan",
+    "PS": "Palestine",
     "PL": "Poland",
     "PT": "Portugal",
     "PW": "Palau",
@@ -534,8 +434,10 @@ const worldMapCodes = {
     "SA": "Saudi Arabia",
     "SB": "Solomon Islands",
     "SC": "Seychelles",
+    "ES": "Spain",
     "SD": "Sudan",
     "SE": "Sweden",
+    "CH": "Switzerland",
     "SG": "Singapore",
     "SI": "Slovenia",
     "SK": "Slovakia",
@@ -543,12 +445,14 @@ const worldMapCodes = {
     "SM": "San Marino",
     "SN": "Senegal",
     "SO": "Somalia",
+    "XS": "Somaliland",
     "SR": "Suriname",
     "SS": "South Sudan",
     "ST": "Sao Tome and Principe",
     "SV": "El Salvador",
     "SY": "Syria",
     "SZ": "Swaziland",
+    "LK": "Sri Lanka",
     "TD": "Chad",
     "TG": "Togo",
     "TH": "Thailand",
@@ -565,6 +469,7 @@ const worldMapCodes = {
     "UA": "Ukraine",
     "UG": "Uganda",
     "US": "United States",
+    "AE": "United Arab Emirates",
     "UY": "Uruguay",
     "UZ": "Uzbekistan",
     "VA": "Vatican City",
@@ -572,74 +477,60 @@ const worldMapCodes = {
     "VE": "Venezuela",
     "VN": "Vietnam",
     "VU": "Vanuatu",
+    "EH": "W. Sahara",
     "WS": "Samoa",
     "YE": "Yemen",
     "ZA": "South Africa",
     "ZM": "Zambia",
     "ZW": "Zimbabwe"
 }
-  
-  
-  
+function assignValues(countryValues, countryCodes) {
+    let result = {};
+    for (let code in countryCodes) {
+      let name = countryCodes[code];
+      if (name in countryValues) {
+        result[code] = countryValues[name];
+      }
+    }
+    return result;
+  }
 
-degreeCountsInst = {
-    "Canada":4,
-    "Denmark":1,
-    "Ireland":1,
-    "Norway":3,
-    "United Kingdom":4,
-    "United States":8,
-    "South Africa":1
-}
+var heatmapvals = assignValues(worldMapNames, worldMapCodes)
 
-var worldMapCodes = {
-    "Canada": "CA",
-    "Denmark": "DK",
-    "Ireland": "IE",
-    "Norway": "NO",
-    "United Kingdom": "GB",
-    "United States": "US",
-    "South Africa": "ZA"
-};
 
-function convertToCodeKeys(data) {
-    var newData = {};
-    for (var country in data) {
-        if (data.hasOwnProperty(country) && worldMapCodes.hasOwnProperty(country)) {
-            var code = worldMapCodes[country];
-            newData[code] = data[country];
-        }
-        }
-    return newData;
-}
-
-var degreeCountsInstByCode = convertToCodeKeys(degreeCountsInst);
-
-$(function() {
+$(function () {
     // Initialize the map
     $('#world-map').vectorMap({
-      map: 'world_mill',
-      backgroundColor: '#ffffff',
-      regionStyle: {
-        initial: {
-          fill: '#c3c1c1'
-        }
-      },
-      onRegionTipShow: (e, el, c) => {
-        var map = $('#world-map').vectorMap('get', 'mapObject');
-        var name = map.getRegionName(c);
-        if (name in degreeCountsInst) {
-            el.html(`${name}: ${degreeCountsInst[name]} institutions`)
-        } else {
-            el.html(`${name}: 0 institutions`)
-        }
-      },
-      series: {
-        regions: [{
-            values: degreeCountsInstByCode,
-            scale: ['#ffffff', '#ff0000'],
-            normalizeFunction: 'polynomial'
-        }]
-      }
+        map: 'world_mill',
+        borderColor: '#000000',
+        backgroundColor: '#ffffff',
+        regionStyle: {
+            initial: {
+                fill: '#c3c1c1'
+            }
+        },
+        onRegionTipShow: (e, el, c) => {
+            el.html(`${worldMapCodes[c]}: ${worldMapNames[worldMapCodes[c]]} institutions`)
+        },
+        series: {
+            regions: [{
+                values: heatmapvals,
+                legend: {
+                    vertical: false,
+                    title: "Coverage of Migration and Health Degrees"
+                },
+                scale: ['#b3e5fc', '#0d47a1'],
+                normalizeFunction: 'polynomial'
+            }]
+        },
+        legend: {
+          vertical: true,
+          title: 'Heatmap Legend',
+          labelRender: function (value) {
+            return value.toFixed(2); // format legend labels to 2 decimal places
+          }
+        },
     });
-  });
+});
+
+console.log('end of script')
